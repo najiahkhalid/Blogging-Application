@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Edit this Post</h1> <!--gets the post to be edited as argument displays its data initillay but when chnages are made then the route were currently on /post/:id/edit has a post request 
+add this route to action of form as form is associated witha post req on this route-->
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="/post/<%= editPost.id %>/edit" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="postTitle" class="form-label">Post Title</label>
+                    <input type="text" class="form-control" id="postTitle" name="newpostTitle" value="<%= editPost.title %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postAuthor" class="form-label">Post Author</label>
+                    <input type="text" class="form-control" id="postAuthor" name="newpostAuthor" placeholder="Enter post author's name" value="<%= editPost.author %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postDescription" class="form-label">Post Description</label>
+                    <textarea class="form-control" id="postDescription" rows="3" name="newpostDescription" placeholder="Write a brief description..." required><%= editPost.description %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postContent" class="form-label">Post Content</label>
+                    <textarea class="form-control" id="postContent" rows="6" name="newpostContent" placeholder="Write your content here..." required><%= editPost.content %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add a PNG file</label>
+                    <input class="form-control" type="file" id="formFile" name="newpicture" required>
+                </div>
+
+                <div class="submit-btn">
+                    <button type="submit" class="btn btn-custom">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

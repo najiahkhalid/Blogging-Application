@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %> 
+<h1>Create A New Post</h1> 
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="/create" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="postTitle" class="form-label">Post Title</label>
+                    <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter post title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postAuthor" class="form-label">Post Author</label>
+                    <input type="text" class="form-control" id="postAuthor" name="postAuthor" placeholder="Enter post author's name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postDescription" class="form-label">Post Description</label>
+                    <textarea class="form-control" id="postDescription" rows="3" name="postDescription" placeholder="Write a brief description..." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postContent" class="form-label">Post Content</label>
+                    <textarea class="form-control" id="postContent" rows="6" name="postContent" placeholder="Write your content here..." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add a PNG file</label>
+                    <input class="form-control" type="file" id="formFile" name="picture" required>
+                </div>
+
+                <div class="submit-btn">
+                    <button type="submit" class="btn btn-custom">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>
